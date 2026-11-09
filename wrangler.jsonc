@@ -1,0 +1,16 @@
+{
+  // Static site for loopbackengineering.com, deployed by Workers Builds on every push to main.
+  "name": "old-field-5dbe",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "loopbackengineering.com", "custom_domain": true },
+    { "pattern": "www.loopbackengineering.com", "custom_domain": true }
+  ]
+}

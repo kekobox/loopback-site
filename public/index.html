@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enterprise Network &amp; Firewall Consulting | Loopback LLC</title>
+<meta name="description" content="Senior-led firewall migrations, Cisco ACI, data center networking and scheduled change execution for US MSPs and enterprise IT teams.">
+<link rel="canonical" href="https://loopbackengineering.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#070b12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Loopback LLC">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://loopbackengineering.com/">
+<meta property="og:title" content="Enterprise Network &amp; Firewall Consulting | Loopback LLC">
+<meta property="og:description" content="Senior-led firewall migrations, Cisco ACI, data center networking and scheduled change execution for US MSPs and enterprise IT teams.">
+<meta property="og:image" content="https://loopbackengineering.com/og-image.jpg">
+<meta property="og:image:secure_url" content="https://loopbackengineering.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Loopback LLC: senior network engineering for firewalls, data centers and routing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Enterprise Network &amp; Firewall Consulting | Loopback LLC">
+<meta name="twitter:description" content="Senior-led firewall migrations, Cisco ACI, data center networking and scheduled change execution for US MSPs and enterprise IT teams.">
+<meta name="twitter:image" content="https://loopbackengineering.com/og-image.jpg">
+<meta name="twitter:image:alt" content="Loopback LLC: senior network engineering for firewalls, data centers and routing">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Loopback LLC","url":"https://loopbackengineering.com","email":"contact@loopbackengineering.com","areaServed":"US","description":"Senior-led firewall migrations, Cisco ACI, data center networking and scheduled change execution for US MSPs and enterprise IT teams.","logo":"https://loopbackengineering.com/apple-touch-icon.png","image":"https://loopbackengineering.com/og-image.png","knowsAbout":["Network design","Firewall migration","Palo Alto Networks","Check Point","Fortinet","Cisco ACI","BGP","OSPF","F5 BIG-IP","Data center migration"]}
+</script>
+<style>
+/* Layout: glassmorphism. A fixed aurora of soft light (cyan = data, orange = signal LED) behind frosted, translucent panels. Content sits in a single column of glass cards; the 24h clock is the hero's frosted instrument panel. */
+:root{
+  --bg:#e9eef4;
+  --bg-2:#dfe7f0;
+  --glass:rgba(255,255,255,.55);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-edge:rgba(255,255,255,.85);
+  --glass-line:rgba(16,32,48,.10);
+  --ink:#0f1a26;
+  --ink-2:#3c4957;
+  --accent:#b33c0c;
+  --accent-ink:#ffffff;
+  --cyan:#0b6a88;
+  --glow-a:rgba(255,128,64,.55);
+  --glow-b:rgba(40,170,210,.50);
+  --glow-c:rgba(120,140,255,.35);
+  --night:#1e2a38;
+  --night-ink:#cdd6df;
+  --shadow:0 10px 30px -12px rgba(15,30,50,.25);
+  --f-display:"Raleway", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#070b12; --bg-2:#0b1220;
+    --glass:rgba(255,255,255,.06); --glass-strong:rgba(255,255,255,.10); --glass-edge:rgba(255,255,255,.16); --glass-line:rgba(255,255,255,.09);
+    --ink:#eef3f8; --ink-2:#bfcad6; --accent:#ff7d45; --accent-ink:#0a0f16; --cyan:#5fd0f0;
+    --glow-a:rgba(255,110,50,.38); --glow-b:rgba(30,160,210,.40); --glow-c:rgba(110,120,255,.28);
+    --night:#02050a; --night-ink:#8d9bab; --shadow:0 14px 40px -16px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#070b12; --bg-2:#0b1220;
+  --glass:rgba(255,255,255,.06); --glass-strong:rgba(255,255,255,.10); --glass-edge:rgba(255,255,255,.16); --glass-line:rgba(255,255,255,.09);
+  --ink:#eef3f8; --ink-2:#bfcad6; --accent:#ff7d45; --accent-ink:#0a0f16; --cyan:#5fd0f0;
+  --glow-a:rgba(255,110,50,.38); --glow-b:rgba(30,160,210,.40); --glow-c:rgba(110,120,255,.28);
+  --night:#02050a; --night-ink:#8d9bab; --shadow:0 14px 40px -16px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:1.0625rem; line-height:1.6; position:relative; overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.aurora{position:fixed; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%); overflow:hidden}
+.aurora i{position:absolute; border-radius:50%; filter:blur(70px)}
+.aurora i:nth-child(1){width:46vmax; height:46vmax; left:-12vmax; top:-14vmax; background:var(--glow-b)}
+.aurora i:nth-child(2){width:38vmax; height:38vmax; right:-10vmax; top:18vh; background:var(--glow-a)}
+.aurora i:nth-child(3){width:40vmax; height:40vmax; left:20vw; bottom:-22vmax; background:var(--glow-c)}
+@media (prefers-reduced-motion: no-preference){
+  .aurora i{animation:drift 28s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){animation-duration:34s}
+  .aurora i:nth-child(3){animation-duration:40s}
+  @keyframes drift{to{transform:translate(4vmax,3vmax) scale(1.08)}}
+}
+.wrap{max-width:72rem; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+a{color:inherit}
+a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:8px}
+h1,h2,h3{margin:0; font-family:var(--f-display); text-wrap:balance}
+p,ul{margin:0}
+.label{font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2)}
+
+/* Shared glass surface */
+.glass, .clock, .who > div, .offer, .report, .case, .terms > div, .spec, .faq details, .addr, .more, .about .prose, .contact .brief{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  border:1px solid var(--glass-edge);
+  border-radius:18px;
+  box-shadow:var(--shadow), inset 0 1px 0 var(--glass-edge);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .glass, .clock, .who > div, .offer, .report, .case, .terms > div, .spec, .faq details, .addr, .more, .about .prose, .contact .brief{background:var(--glass-strong)}
+}
+
+/* Top bar */
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; padding-block:.75rem}
+.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.top .wrap > *{position:relative}
+.top .wrap{background:var(--glass-strong); -webkit-backdrop-filter:blur(20px) saturate(1.5); backdrop-filter:blur(20px) saturate(1.5); border:1px solid var(--glass-edge); border-radius:999px; padding-block:.55rem; box-shadow:var(--shadow); max-width:calc(72rem - 32px); margin-inline:max(16px, env(safe-area-inset-left,0px)) max(16px, env(safe-area-inset-right,0px))}
+@media (min-width:1104px){ .top .wrap{margin-inline:auto} }
+.mark{display:flex; align-items:baseline; gap:.45rem; text-decoration:none; padding-left:.35rem}
+.mark b{font-family:var(--f-display); font-stretch:125%; font-weight:800; font-size:1.1rem; letter-spacing:.02em}
+.mark span{font-family:var(--f-mono); font-size:.78rem; color:var(--ink-2)}
+.led{display:inline-block; width:.55rem; height:.55rem; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); margin-right:.15rem; transform:translateY(-.1rem)}
+.top nav{display:flex; gap:1.2rem; align-items:center}
+.top nav a{text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink-2)}
+.top nav a:hover{color:var(--ink)}
+.top nav a.go{color:var(--accent-ink); background:var(--accent); padding:.5rem .95rem; border-radius:999px; box-shadow:0 6px 18px -6px var(--accent)}
+.burger{display:none; width:2.6rem; height:2.6rem; border-radius:999px; border:1px solid var(--glass-edge); background:var(--glass); color:var(--ink); cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px; padding:0}
+.burger span{display:block; width:1.1rem; height:2px; border-radius:2px; background:currentColor; transition:transform .2s ease, opacity .2s ease}
+.top.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.top.open .burger span:nth-child(2){opacity:0}
+.top.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (prefers-reduced-motion: reduce){ .burger span{transition:none} }
+@media (max-width:760px){
+  .burger{display:inline-flex}
+  .top .wrap{flex-wrap:wrap; border-radius:22px; row-gap:0}
+  .top nav{display:none; order:3; width:100%; flex-direction:column; align-items:stretch; gap:.15rem; padding:.5rem .1rem .35rem; margin-top:.4rem; border-top:1px solid var(--glass-line)}
+  .top.open nav{display:flex}
+  .top nav a{padding:.75rem .7rem; border-radius:12px; font-size:1rem; color:var(--ink)}
+  .top nav a:hover{background:var(--glass)}
+  .top nav a.go{text-align:center; margin-top:.35rem; padding:.8rem}
+}
+
+/* Hero fiber animation */
+.hero{position:relative; isolation:isolate}
+.fibers{position:absolute; left:0; top:-5rem; width:100%; height:calc(100% + 5rem); z-index:-1; pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 14%, #000 62%, transparent 92%);
+  mask-image:linear-gradient(to bottom, transparent 0, #000 14%, #000 62%, transparent 92%)}
+.hero .wrap{position:relative}
+
+/* Hero */
+.hero .wrap{padding-block:3.5rem 2.5rem; display:grid; gap:1.8rem}
+.hero h1{font-stretch:112%; font-weight:750; font-size:clamp(2.1rem, 5.2vw, 3.9rem); line-height:1.04; letter-spacing:-.015em; max-width:20ch}
+.hero h1 em{font-style:normal; background:linear-gradient(90deg, var(--accent), var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lede{font-size:1.15rem; color:var(--ink-2); max-width:42rem}
+.cta{display:flex; flex-wrap:wrap; gap:.75rem}
+.btn{display:inline-flex; align-items:center; font:600 .95rem/1 var(--f-body); padding:.9rem 1.25rem; text-decoration:none; border-radius:999px; cursor:pointer; color:var(--ink); background:var(--glass); border:1px solid var(--glass-edge); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); transition:transform .15s ease, box-shadow .15s ease}
+.btn.solid{background:var(--accent); border-color:transparent; color:var(--accent-ink); box-shadow:0 10px 24px -10px var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){ .btn{transition:none} .btn:hover{transform:none} }
+
+/* 24h clock */
+.clock{margin:0; padding:1.3rem 1.3rem 1.1rem; display:grid; gap:.9rem; min-width:0}
+.clock-head{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem; align-items:baseline}
+.clock-head h2{font-size:1.05rem; font-stretch:105%; font-weight:700}
+.lanes{display:grid; gap:.6rem}
+.lane{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:.75rem; align-items:center}
+@media (max-width:560px){ .lane{grid-template-columns:minmax(0,1fr); gap:.25rem} .scale{grid-template-columns:minmax(0,1fr)!important} .scale > span:first-child{display:none} }
+.lane-name{font-family:var(--f-mono); font-size:.8rem; color:var(--ink-2)}
+.bar{position:relative; height:1.9rem; background:var(--glass); border:1px solid var(--glass-line); border-radius:10px; overflow:hidden}
+.seg{position:absolute; top:0; bottom:0; display:flex; align-items:center; padding:0 .45rem; font-family:var(--f-mono); font-size:.72rem; white-space:nowrap; overflow:hidden}
+.seg.night{background:var(--night); color:var(--night-ink)}
+.seg.work{background:linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, var(--cyan))); color:var(--accent-ink)}
+.seg.overlap{background:repeating-linear-gradient(135deg, var(--accent) 0 6px, var(--night) 6px 12px); color:#fff; text-shadow:0 0 3px #000}
+.scale{display:grid; grid-template-columns:8.5rem minmax(0,1fr); gap:.75rem}
+.ticks{display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:.7rem; color:var(--ink-2)}
+.legend{display:flex; flex-wrap:wrap; gap:1rem; font-size:.8rem; color:var(--ink-2)}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.k{display:inline-block; width:.9rem; height:.6rem; border-radius:3px}
+.k.night{background:var(--night)} .k.work{background:var(--accent)} .k.overlap{background:repeating-linear-gradient(135deg, var(--accent) 0 3px, var(--night) 3px 6px)}
+.clock-note{font-size:.88rem; color:var(--ink-2)}
+
+/* Sections */
+.sec .wrap{display:grid; grid-template-columns:13rem minmax(0,1fr); gap:2.5rem; padding-block:3rem}
+@media (max-width:860px){ .sec .wrap{grid-template-columns:minmax(0,1fr); gap:1.1rem; padding-block:2.25rem} }
+.rail{display:grid; gap:.4rem; align-content:start; position:sticky; top:6rem}
+@media (max-width:860px){ .rail{position:static} }
+.rail h2{font-stretch:116%; font-weight:750; font-size:1.55rem; line-height:1.1}
+.body{min-width:0; display:grid; gap:1.25rem}
+.intro{color:var(--ink-2); max-width:46rem}
+
+/* Who */
+.who{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem}
+@media (max-width:860px){ .who{grid-template-columns:minmax(0,1fr)} }
+.who > div{padding:1.3rem; display:grid; gap:.5rem; align-content:start}
+.who h3{font-stretch:105%; font-size:1.15rem; font-weight:700}
+.who p{color:var(--ink-2)}
+.who .need{font-family:var(--f-mono); font-size:.78rem; color:var(--cyan)}
+
+/* Offers */
+.offers{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem}
+@media (max-width:760px){ .offers{grid-template-columns:minmax(0,1fr)} }
+.offer{display:grid; grid-template-rows:auto 1fr auto; min-width:0; overflow:hidden}
+.offer header{padding:1.15rem 1.25rem .9rem; border-bottom:1px solid var(--glass-line); display:grid; gap:.3rem}
+.offer h3{font-stretch:108%; font-size:1.2rem; font-weight:700}
+.offer .what{padding:1rem 1.25rem; display:grid; gap:.7rem; align-content:start}
+.offer .what p{color:var(--ink-2)}
+.offer ul{padding-left:1.1rem; display:grid; gap:.3rem; font-size:.95rem}
+.offer ul li::marker{color:var(--accent)}
+.offer dl{margin:0; display:grid; grid-template-columns:auto 1fr; border-top:1px solid var(--glass-line)}
+.offer dt, .offer dd{margin:0; padding:.55rem 1.25rem; border-bottom:1px solid var(--glass-line); font-size:.88rem}
+.offer dt{font-family:var(--f-mono); font-size:.7rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); padding-right:.4rem}
+.offer dd{padding-left:.4rem}
+.offer dl > :nth-last-child(-n+2){border-bottom:0}
+.offer.key{border-color:color-mix(in srgb, var(--accent) 55%, transparent); box-shadow:var(--shadow), 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent), 0 18px 40px -20px var(--accent)}
+.offer.key header{background:color-mix(in srgb, var(--accent) 12%, transparent)}
+
+/* Sample report */
+.report-wrap{overflow-x:auto; border-radius:18px}
+.report{width:100%; min-width:36rem; border-collapse:separate; border-spacing:0; font-size:.92rem; overflow:hidden}
+.report caption{caption-side:top; text-align:left; padding-bottom:.6rem}
+.report th, .report td{text-align:left; vertical-align:top; padding:.7rem .85rem; border-bottom:1px solid var(--glass-line)}
+.report tr:last-child td{border-bottom:0}
+.report thead th{font-family:var(--f-mono); font-weight:400; font-size:.7rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2)}
+.report td.id{font-family:var(--f-mono); white-space:nowrap}
+.sev{display:inline-block; font-family:var(--f-mono); font-size:.7rem; padding:.15rem .5rem; border:1px solid currentColor; border-radius:999px; white-space:nowrap}
+.sev.high{color:var(--accent)}
+.sev.med{color:var(--cyan)}
+.sev.low{color:var(--ink-2)}
+
+/* Experience */
+.cases{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem}
+@media (max-width:760px){ .cases{grid-template-columns:minmax(0,1fr)} }
+.case{min-width:0; overflow:hidden}
+.case header{padding:1.1rem 1.25rem .85rem; display:grid; gap:.3rem; border-bottom:1px solid var(--glass-line)}
+.case h3{font-stretch:106%; font-size:1.12rem; font-weight:700}
+.case dl{margin:0; display:grid; grid-template-columns:6.5rem minmax(0,1fr)}
+.case dt, .case dd{margin:0; padding:.6rem 1.25rem; border-bottom:1px solid var(--glass-line); font-size:.92rem}
+.case dt{font-family:var(--f-mono); font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); padding-right:.3rem}
+.case dd{padding-left:.3rem}
+.case dl > :nth-last-child(-n+2){border-bottom:0}
+@media (max-width:420px){ .case dl{grid-template-columns:minmax(0,1fr)} .case dt{border-bottom:0; padding-bottom:0} .case dd{padding-left:1.25rem} }
+.more{padding:0 1.1rem}
+.more summary{cursor:pointer; padding:1rem 0; font-weight:600; list-style:none; display:flex; justify-content:space-between}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+"; font-family:var(--f-mono); color:var(--accent)}
+.more[open] summary::after{content:"−"}
+.more .cases{padding-bottom:1.1rem}
+.more .case{background:var(--glass-strong)}
+
+/* Working with us */
+.terms{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem}
+@media (max-width:760px){ .terms{grid-template-columns:minmax(0,1fr)} }
+.terms > div{padding:1.15rem 1.25rem; display:grid; gap:.3rem; align-content:start}
+.terms h3{font-size:1.02rem; font-weight:700; font-stretch:104%}
+.terms p{color:var(--ink-2); font-size:.97rem}
+.stack{display:flex; flex-wrap:wrap; gap:.5rem}
+.stack span{font-family:var(--f-mono); font-size:.82rem; padding:.4rem .8rem; border-radius:999px; background:var(--glass); border:1px solid var(--glass-edge); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px)}
+
+/* About */
+.about{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:1rem; align-items:start}
+@media (max-width:860px){ .about{grid-template-columns:minmax(0,1fr)} }
+.about .prose{padding:1.4rem; display:grid; gap:1rem}
+.name{font-family:var(--f-display); font-stretch:110%; font-weight:700; font-size:1.35rem}
+.role{color:var(--accent); font-weight:600; margin-top:-.6rem}
+.spec{width:100%; border-collapse:separate; border-spacing:0; font-size:.93rem; overflow:hidden}
+.spec th, .spec td{text-align:left; vertical-align:top; padding:.75rem 1rem; border-bottom:1px solid var(--glass-line)}
+.spec tr:last-child th, .spec tr:last-child td{border-bottom:0}
+.spec th{font-family:var(--f-mono); font-weight:400; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); width:42%}
+
+/* FAQ */
+.faq{gap:.6rem}
+.faq details{padding:0 1.2rem}
+.faq summary{cursor:pointer; padding:1rem 0; font-weight:600; list-style:none; display:flex; justify-content:space-between; gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; font-family:var(--f-mono); color:var(--accent)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 1.1rem; color:var(--ink-2); max-width:46rem}
+
+/* Contact */
+.contact{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1rem; align-items:start}
+@media (max-width:860px){ .contact{grid-template-columns:minmax(0,1fr)} }
+.contact .brief{padding:1.3rem; display:grid; gap:.6rem}
+.brief ol{margin:0; padding-left:1.2rem; display:grid; gap:.35rem; color:var(--ink-2)}
+.addr{font-family:var(--f-mono); font-size:clamp(1rem, 2.4vw, 1.25rem); padding:1rem 1.2rem; word-break:break-all; user-select:all}
+#copy-status{font-size:.9rem; color:var(--ink-2); min-height:1.3em}
+
+footer .legal{display:flex; flex-wrap:wrap; gap:1.1rem} footer .legal a{color:var(--ink-2); text-decoration:none} footer .legal a:hover{color:var(--ink); text-decoration:underline}
+footer .wrap{padding-block:1.5rem 2.75rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; font-size:.88rem; color:var(--ink-2); border-top:1px solid var(--glass-line)}
+
+/* Raleway headlines: lining figures, no width axis */
+h1,h2,h3,.mark b,.name{font-family:var(--f-display); font-variant-numeric:lining-nums; font-stretch:normal!important}
+.mark .logo{width:1.9rem; height:1.9rem; flex:none; align-self:center}
+.mark{align-items:center}
+.mark b{letter-spacing:.06em}
+
+/* v3 additions */
+.eyebrow{color:var(--accent)}
+.proof{list-style:none; margin:.5rem 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; max-width:52rem}
+@media (max-width:700px){ .proof{grid-template-columns:minmax(0,1fr)} }
+.proof li{padding:1rem 1.1rem; border-radius:16px; background:var(--glass); border:1px solid var(--glass-edge); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); display:grid; gap:.15rem}
+.proof strong{font-family:var(--f-display); font-size:1.15rem; font-weight:800}
+.proof span{font-size:.88rem; color:var(--ink-2)}
+.pillars{display:grid; gap:2rem}
+.pillar{display:grid; gap:1rem}
+.pillar-head{display:grid; gap:.3rem; padding-left:1rem; border-left:3px solid var(--accent)}
+.pillar-head h3{font-size:1.35rem; font-weight:800}
+.pillar-head p{color:var(--ink-2); max-width:46rem}
+.pillar-head .ptags{font-family:var(--f-mono); font-size:.78rem; color:var(--cyan)}
+.next{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.75rem; counter-reset:n}
+@media (max-width:860px){ .next{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:480px){ .next{grid-template-columns:minmax(0,1fr)} }
+.next li{counter-increment:n; padding:1rem 1.1rem; border-radius:16px; background:var(--glass); border:1px solid var(--glass-edge); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); display:grid; gap:.2rem}
+.next li::before{content:counter(n); font-family:var(--f-mono); font-size:.75rem; color:var(--accent)}
+.next strong{font-family:var(--f-display); font-weight:800}
+.next span{font-size:.9rem; color:var(--ink-2)}
+
+/* audit 2 */
+section[id]{scroll-margin-top:6.5rem}
+@media (max-width:760px){ section[id]{scroll-margin-top:5.5rem} }
+.hero .wrap > *:not(.proof){position:relative}
+.hero .wrap::before{content:""; position:absolute; z-index:0; left:0; right:0; top:1.5rem; bottom:5rem; pointer-events:none;
+  background:radial-gradient(ellipse 70% 75% at 22% 45%, color-mix(in srgb, var(--bg) 78%, transparent) 0%, color-mix(in srgb, var(--bg) 45%, transparent) 55%, transparent 80%)}
+.hero .wrap > *{position:relative; z-index:1}
+.note{font-size:.9rem; color:var(--ink-2); max-width:34rem}
+.mailbox{display:grid; gap:.75rem; min-width:0}
+.next-wrap{display:grid; gap:.6rem}
+.callout{padding:1rem 1.2rem; border-radius:16px; background:var(--glass); border:1px dashed var(--glass-edge); display:grid; gap:.35rem}
+.callout p{color:var(--ink-2); font-size:.95rem}
+.callout strong{color:var(--ink)}
+.callout a{color:var(--accent)}
+@media (max-width:600px){
+  .report-wrap{overflow:visible}
+  .report{min-width:0; border:0; background:transparent; box-shadow:none; -webkit-backdrop-filter:none; backdrop-filter:none}
+  .report thead{display:none}
+  .report, .report tbody, .report tr, .report td{display:block; width:100%}
+  .report tr{margin-bottom:.75rem; padding:.4rem 0; border-radius:16px; background:var(--glass); border:1px solid var(--glass-edge); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px)}
+  .report td{border-bottom:1px solid var(--glass-line); padding:.55rem 1rem; display:grid; gap:.15rem}
+  .report tr td:last-child{border-bottom:0}
+  .report caption{display:block; width:100%}
+  .report td .sev{justify-self:start}
+  .report td::before{content:attr(data-label); font-family:var(--f-mono); font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2)}
+}
+
+/* site footer */
+footer .wrap.fsite{display:grid; grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr)); gap:2rem; padding-block:2.5rem 1.5rem; border-top:1px solid var(--glass-line); font-size:.92rem}
+@media (max-width:860px){ footer .wrap.fsite{grid-template-columns:repeat(2,minmax(0,1fr))} .fbrand{grid-column:1 / -1} }
+@media (max-width:420px){ footer .wrap.fsite{grid-template-columns:minmax(0,1fr)} }
+footer .fsite nav{display:grid; gap:.45rem; align-content:start}
+footer .fsite nav a, .fbrand a{color:var(--ink-2); text-decoration:none}
+footer .fsite nav a:hover, .fbrand a:hover{color:var(--ink); text-decoration:underline}
+.fbrand{display:grid; gap:.5rem; align-content:start; color:var(--ink-2); max-width:22rem}
+.fname{font-family:var(--f-display); font-weight:800; color:var(--ink)}
+footer .wrap.fbase{padding-block:1rem 2.5rem; border-top:1px solid var(--glass-line); display:block; font-size:.85rem; color:var(--ink-2)}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Loopback LLC home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lbA" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#5fd0f0"/><stop offset="1" stop-color="#ff7d45"/></linearGradient></defs><path d="M18 14 V40 a10 10 0 0 0 10 10 H38 a12 12 0 0 0 0 -24 H18" fill="none" stroke="url(#lbA)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="14" r="6.5" fill="#ff7d45"/></svg><b>LOOPBACK</b><span>LLC</span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav id="site-nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="go" href="#contact">Request a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <canvas class="fibers" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="label eyebrow">Enterprise network &amp; security consulting</p>
+      <h1>Complex network changes. <em>Delivered with confidence.</em></h1>
+      <p class="lede">Senior-led firewall migrations, data center networking, routing and scheduled after-hours change execution for US MSPs and enterprise IT teams.</p>
+      <div class="cta">
+        <a class="btn solid" href="#contact">Request a 20-minute call</a>
+        <a class="btn" href="#services">Explore services</a>
+      </div>
+      <ul class="proof" aria-label="At a glance">
+        <li><strong>Since 2007</strong><span>Working in IT</span></li>
+        <li><strong>Scales with you</strong><span>Principal-led, with vetted specialists when needed</span></li>
+        <li><strong>US overnight</strong><span>Change windows, scheduled in advance</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="who">
+    <div class="wrap">
+      <div class="rail"><span class="label">Who we help</span><h2>Built for three kinds of teams</h2></div>
+      <div class="body">
+        <div class="who">
+          <div>
+            <h3>MSPs and MSSPs</h3>
+            <p>You have more firewall and network work than senior engineers. We take projects and overnight changes under your brand, through your ticketing and change process.</p>
+            <p class="need">White-label · overflow · after-hours</p>
+          </div>
+          <div>
+            <h3>Internal IT teams</h3>
+            <p>One or two people run the whole network. When a firewall migration or data center move lands on top of the daily work, we plan and carry it with you.</p>
+            <p class="need">Projects · second opinion · handover</p>
+          </div>
+          <div>
+            <h3>Integrators and VARs</h3>
+            <p>You sold the hardware and the deployment. We deliver the configuration, migration and cutover so your team can keep selling.</p>
+            <p class="need">Subcontract delivery · cutover support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="rail"><span class="label">Leadership</span><h2>Leadership and delivery</h2></div>
+      <div class="about">
+        <div class="prose">
+          <p class="name">Carlos Alberto Fernández Fraga</p>
+          <p class="role">Founder and Principal Network Engineer</p>
+          <p>Carlos has worked in IT since 2007 and has spent more than ten years running multi-vendor networks for large enterprise environments. His recent work covers firewall changes, routing, load balancing and DNS across two data centers for a large international organization.</p>
+          <p>Loopback LLC was founded in 2026 to bring that level of experience to teams that need it for a project or a night, not a full-time hire.</p>
+          <p>Every engagement is led by Carlos. When a project needs more hands, such as a multi-site migration or a run of overnight windows, we bring in vetted specialist engineers from our network. They work under the same NDAs, change standards and documentation rules, and you keep a single point of contact.</p>
+        </div>
+        <table class="spec" aria-label="Experience summary">
+          <tbody>
+            <tr><th scope="row">In IT since</th><td>2007</td></tr>
+            <tr><th scope="row">Enterprise networking</th><td>10+ years</td></tr>
+            <tr><th scope="row">Environments</th><td>Multi-vendor, multi-data-center</td></tr>
+            <tr><th scope="row">Delivery model</th><td>Principal-led, with vetted specialists added as needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="rail"><span class="label">Services</span><h2>Three practice areas</h2></div>
+      <div class="body">
+        <p class="intro">Each service has a defined output. After a short scoping call you get a fixed price and a date, so the work can be approved without a long sales process.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-head"><h3>Network &amp; data center engineering</h3><p>Lower the risk of large changes to the core of your network, with a design and plan your team can follow.</p><p class="ptags">Projects · assessments · architecture</p></div>
+            <div class="offers"><article class="offer">
+            <header><span class="label">Projects</span><h3>Data center network migration</h3></header>
+            <div class="what">
+              <p>Planning and running moves between data centers, colocation and fabrics, including exits from Cisco ACI.</p>
+              <ul>
+                <li>Current-state discovery and dependency map</li>
+                <li>Target design and staged migration plan</li>
+                <li>Wave-by-wave cutover with a tested way back</li>
+              </ul>
+            </div>
+            <dl><dt>Starts with</dt><dd>A 2-week assessment</dd><dt>Platforms</dt><dd>Cisco ACI, Cisco NX-OS, BGP, OSPF, F5</dd></dl>
+          </article><article class="offer">
+            <header><span class="label">Assessment</span><h3>Network health check</h3></header>
+            <div class="what">
+              <p>An outside review of the things that fail quietly until they fail loudly.</p>
+              <ul>
+                <li>Routing, redundancy and failover behavior</li>
+                <li>DNS, DHCP and IP address management</li>
+                <li>Monitoring gaps and a prioritized fix list</li>
+              </ul>
+            </div>
+            <dl><dt>Typical length</dt><dd>1 to 2 weeks</dd><dt>Output</dt><dd>Findings report and a 90-day plan</dd></dl>
+          </article></div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-head"><h3>Firewall &amp; security infrastructure</h3><p>Know exactly what your firewalls allow, and move between platforms without surprises on cutover night.</p><p class="ptags">Migrations · rule-base reviews · operations</p></div>
+            <div class="offers"><article class="offer">
+            <header><span class="label">Assessment</span><h3>Firewall rule-base review</h3></header>
+            <div class="what">
+              <p>A clear picture of what your firewall policy actually allows, and a safe plan to tighten it.</p>
+              <ul>
+                <li>Unused, shadowed and overly broad rules identified</li>
+                <li>Findings ranked by risk, in plain language</li>
+                <li>Clean-up change plan ready for your change board</li>
+              </ul>
+            </div>
+            <dl><dt>Typical length</dt><dd>1 to 2 weeks</dd><dt>Platforms</dt><dd>Palo Alto, Check Point, Fortinet</dd></dl>
+          </article><article class="offer">
+            <header><span class="label">Projects</span><h3>Firewall migration</h3></header>
+            <div class="what">
+              <p>A documented, tested move between firewall vendors or to new hardware.</p>
+              <ul>
+                <li>Policy conversion and clean-up during the move</li>
+                <li>Cutover runbook with test cases and rollback</li>
+                <li>Cutover and post-cutover support as agreed in the scope</li>
+              </ul>
+            </div>
+            <dl><dt>Typical length</dt><dd>2 to 6 weeks</dd><dt>Common moves</dt><dd>Check Point or Fortinet to Palo Alto, hardware refresh</dd></dl>
+          </article></div>
+            <aside class="callout"><span class="label">From our principal's prior work</span><p><strong>Firewall hardware refresh in a production data center.</strong> A cluster with multiple virtual domains moved to new hardware while single sign-on, centralized admin authentication and central management stayed in place. <a href="#experience">See selected work</a></p></aside>
+          </div>
+          <div class="pillar">
+            <div class="pillar-head"><h3>Change execution &amp; specialist support</h3><p>Senior capacity when you need it: planned changes, hard problems and monitoring, without a permanent hire.</p><p class="ptags">After-hours changes · MSP overflow · escalation</p></div>
+            <div class="offers"><article class="offer">
+            <header><span class="label">For MSPs and IT teams</span><h3>Overnight change execution</h3></header>
+            <div class="what">
+              <p>Your team approves the change. We run it in your window and hand you the evidence in the morning.</p>
+              <ul>
+                <li>Pre-change checks and a rollback plan you can read</li>
+                <li>Execution in your window, with live updates in your channel</li>
+                <li>Post-change tests and a short written report</li>
+              </ul>
+            </div>
+            <dl><dt>Billing</dt><dd>Per change window, or a monthly block</dd><dt>Platforms</dt><dd>Palo Alto, Check Point, Fortinet, Cisco, F5</dd></dl>
+          </article><article class="offer">
+            <header><span class="label">Build</span><h3>Network monitoring setup</h3></header>
+            <div class="what">
+              <p>Dashboards and alerts that tell you a link, tunnel or BGP session is in trouble before users do.</p>
+              <ul>
+                <li>Device, interface and VPN tunnel metrics</li>
+                <li>BGP and routing state alerts</li>
+                <li>Runs on open-source tools you own, no license fees</li>
+              </ul>
+            </div>
+            <dl><dt>Typical length</dt><dd>1 to 3 weeks</dd><dt>Stack</dt><dd>Prometheus, Grafana, Loki</dd></dl>
+          </article></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="overnight">
+    <div class="wrap">
+      <div class="rail"><span class="label">After hours</span><h2>US overnight maintenance windows</h2></div>
+      <div class="body">
+        <p class="intro">Our working day starts while the US is asleep, so planned overnight changes are run by rested senior engineers. Windows are booked ahead of time; we do not offer unscheduled 24/7 cover.</p>
+        <figure class="clock" aria-labelledby="clock-title">
+        <div class="clock-head">
+          <h2 id="clock-title">Overnight change windows and our working hours</h2>
+          <span class="label">24 hours · US winter time (EST / PST)</span>
+        </div>
+        <div class="lanes">
+          <div class="lane">
+            <span class="lane-name">US Eastern</span>
+            <div class="bar" aria-label="US Eastern window 11 p.m. to 5 a.m.; 2 to 5 a.m. falls inside our working hours">
+              <span class="seg night" style="left:0; width:8.33%"></span><span class="seg overlap" style="left:8.33%; width:12.5%">2–5 a.m.</span>
+              <span class="seg night" style="left:95.83%; width:4.17%"></span>
+            </div>
+          </div>
+          <div class="lane">
+            <span class="lane-name">US Pacific</span>
+            <div class="bar" aria-label="US Pacific overnight window 11 p.m. to 5 a.m., which is 2 to 8 a.m. Eastern">
+              <span class="seg overlap" style="left:8.33%; width:25%">full window</span>
+            </div>
+          </div>
+          <div class="lane">
+            <span class="lane-name">Loopback hours</span>
+            <div class="bar" aria-label="Loopback working hours, 2 a.m. to noon Eastern">
+              <span class="seg work" style="left:8.33%; width:41.67%">Working day</span>
+            </div>
+          </div>
+          <div class="scale">
+            <span></span>
+            <div class="ticks" aria-hidden="true"><span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>12a ET</span></div>
+          </div>
+        </div>
+        <div class="legend" aria-hidden="true"><span><i class="k night"></i>Window outside our hours</span><span><i class="k overlap"></i>Window inside our hours</span><span><i class="k work"></i>Our working hours</span></div>
+        <figcaption class="clock-note">Shown for a typical 11 p.m. to 5 a.m. window in US winter time (EST/PST), based on our European working hours. The overlap shifts by about an hour for a few weeks each spring and autumn, because the US and Europe change clocks on different dates. Coverage is agreed per engagement and always scheduled in advance.</figcaption>
+      </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="rail"><span class="label">Experience</span><h2>Selected work</h2></div>
+      <div class="body">
+        <p class="intro">Examples from our principal engineer's previous engagements in enterprise and international-organization networks. Client names and identifying details are left out on purpose; we treat every environment we work in the same way.</p>
+        <div class="cases">
+
+          <article class="case">
+            <header><span class="label">Data center fabric</span><h3>Documentation and handover of a large Cisco ACI fabric</h3></header>
+            <dl>
+              <dt>Challenge</dt><dd>A large ACI fabric had grown for years without a complete, current picture of how it was built.</dd>
+              <dt>Approach</dt><dd>Documented the fabric end to end, from physical links to tenants, bridge domains and endpoint groups, with interactive topology views and a structured handover document for the operations team.</dd>
+              <dt>Result</dt><dd>A documented operational baseline the team can plan future changes against.</dd>
+              <dt>Platforms</dt><dd>Cisco ACI, Nexus 9000</dd>
+            </dl>
+          </article>
+
+          <article class="case">
+            <header><span class="label">Firewall migration</span><h3>Firewall hardware refresh in a production data center</h3></header>
+            <dl>
+              <dt>Challenge</dt><dd>A firewall cluster running multiple virtual domains had reached the end of its hardware life.</dd>
+              <dt>Approach</dt><dd>Migrated to new hardware while keeping the virtual domains, single sign-on, centralized administrator authentication and central management in place.</dd>
+              <dt>Result</dt><dd>New hardware in service with segmentation, authentication and central management carried over.</dd>
+              <dt>Platforms</dt><dd>Fortinet FortiGate, FortiManager</dd>
+            </dl>
+          </article>
+
+          <article class="case">
+            <header><span class="label">VPN migration</span><h3>Phased move of site-to-site VPNs to new firewall clusters</h3></header>
+            <dl>
+              <dt>Challenge</dt><dd>Dozens of partner and site VPNs had to move to new firewall clusters without breaking the services behind them.</dd>
+              <dt>Approach</dt><dd>Inventoried every tunnel, grouped them into phases and moved them on a planned timeline, coordinating with the remote parties at each step.</dd>
+              <dt>Result</dt><dd>A phased plan that kept each change window to a small, testable group of tunnels.</dd>
+              <dt>Platforms</dt><dd>IPsec site-to-site VPN, multi-vendor firewalls</dd>
+            </dl>
+          </article>
+
+        </div>
+        <details class="more">
+          <summary>More examples</summary>
+          <div class="cases">
+            <article class="case">
+              <header><span class="label">Troubleshooting</span><h3>Fabric-wide fault storm traced to a virtualization change</h3></header>
+              <dl>
+                <dt>Challenge</dt><dd>A data center fabric suddenly raised a large number of faults with no network change behind them.</dd>
+                <dt>Approach</dt><dd>Traced the cause to a change on the virtualization platform that broke its integration with the fabric, and documented the fix and how to prevent it.</dd>
+                <dt>Result</dt><dd>Root cause identified and a prevention step documented for future platform changes.</dd>
+              <dt>Platforms</dt><dd>Cisco ACI, VMware vCenter</dd>
+              </dl>
+            </article>
+            <article class="case">
+              <header><span class="label">Monitoring</span><h3>Options for replacing a monitoring platform being retired</h3></header>
+              <dl>
+                <dt>Challenge</dt><dd>The network team's commercial monitoring platform was being decommissioned.</dd>
+                <dt>Approach</dt><dd>Prepared replacement proposals covering metrics and logs, configuration backup, flow analysis and fabric analytics, built mainly on open-source tools.</dd>
+                <dt>Result</dt><dd>A set of options the team could compare on coverage, cost and effort.</dd>
+              <dt>Platforms</dt><dd>Prometheus, Grafana, Loki, Oxidized, Akvorado</dd>
+              </dl>
+            </article>
+            <article class="case">
+              <header><span class="label">Firewall operations</span><h3>Security log collectors close to full</h3></header>
+              <dl>
+                <dt>Challenge</dt><dd>Firewall log collectors were running out of disk, putting security logging at risk.</dd>
+                <dt>Approach</dt><dd>Found that retention settings did not match real log volumes, cleaned up and upgraded the collectors and corrected retention so it would not recur.</dd>
+                <dt>Result</dt><dd>Security logging protected, with retention matched to real log volumes.</dd>
+              <dt>Platforms</dt><dd>Check Point</dd>
+              </dl>
+            </article>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="deliverable">
+    <div class="wrap">
+      <div class="rail"><span class="label">Deliverables</span><h2>What you get on paper</h2></div>
+      <div class="body">
+        <p class="intro">Every engagement ends with something your team can act on and your auditors can read. Below is an example of the findings format from a firewall rule-base review. It is a format sample, not client data.</p>
+        <div class="report-wrap">
+          <table class="report">
+            <caption class="label">Example findings format · rule-base review</caption>
+            <thead><tr><th scope="col">ID</th><th scope="col">Finding</th><th scope="col">Risk</th><th scope="col">Recommended action</th></tr></thead>
+            <tbody>
+              <tr><td class="id" data-label="ID">FW-01</td><td data-label="Finding">Rule allows any service from the guest network to the server VLAN</td><td data-label="Risk"><span class="sev high">High</span></td><td data-label="Recommended action">Confirm required services with the rule owner using traffic logs, replace with specific rules in an approved change, rollback documented</td></tr>
+              <tr><td class="id" data-label="ID">FW-02</td><td data-label="Finding">Rule is fully shadowed by a broader rule above it and never matches</td><td data-label="Risk"><span class="sev med">Medium</span></td><td data-label="Recommended action">Confirm intent with the rule owner, then remove through an approved change with rollback</td></tr>
+              <tr><td class="id" data-label="ID">FW-03</td><td data-label="Finding">Rule with no hits in the log period reviewed and no recorded owner</td><td data-label="Risk"><span class="sev low">Low</span></td><td data-label="Recommended action">Validate dependencies and owner; if approved, disable under monitoring for an agreed period with defined rollback criteria, then remove after owner sign-off</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="working">
+    <div class="wrap">
+      <div class="rail"><span class="label">Working with us</span><h2>How engagements run</h2></div>
+      <div class="body">
+        <div class="terms">
+          <div><h3>US contracts in US dollars</h3><p>You contract with and are invoiced by Loopback LLC, a US company. Fixed price per scope, or a day rate for ongoing work.</p></div>
+          <div><h3>NDA before access</h3><p>We sign your NDA before you share configurations or diagrams.</p></div>
+          <div><h3>Your access, your rules</h3><p>We connect through your VPN or jump hosts with the access you grant. Read-only first, change rights only when a change is approved.</p></div>
+          <div><h3>Your change process</h3><p>Changes go through your tickets, approvals and maintenance windows. Every change has a written rollback.</p></div>
+          <div><h3>Overlap with US hours</h3><p>Calls and handovers happen in the US morning, so the person who ran your overnight change is the one who briefs your team.</p></div>
+          <div><h3>Documentation you keep</h3><p>Configurations, diagrams and runbooks are updated and handed over at the end of each job.</p></div>
+        </div>
+        <div class="stack" aria-label="Platforms">
+          <span>Palo Alto Networks</span><span>Check Point</span><span>Fortinet</span><span>Cisco</span><span>Cisco ACI</span><span>F5 BIG-IP</span><span>EfficientIP</span><span>Prometheus · Grafana</span><span>Python · Ansible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="rail"><span class="label">FAQ</span><h2>Common questions</h2></div>
+      <div class="body faq">
+        <details><summary>How do you staff larger projects?</summary><p>Every engagement is led by our principal engineer. When the scope needs more capacity, we add vetted specialist engineers from our network. They sign the same NDAs, follow the same change and documentation standards, and report through one point of contact, so you never manage several contractors.</p></details>
+        <details><summary>Can you work under our brand?</summary><p>Yes. For MSPs and integrators we can work as part of your team, using your email domain, ticketing system and customer communication rules.</p></details>
+        <details><summary>How fast can you start?</summary><p>Scoping calls are usually available within a few business days. Overnight change work is scheduled once your change is approved.</p></details>
+        <details><summary>Do you work on site?</summary><p>Work is delivered remotely. On-site visits in the US can be arranged for cutovers or workshops when the project needs it.</p></details>
+        <details><summary>How is pricing set?</summary><p>Fixed-scope services get a fixed price after the scoping call. Ongoing support and overflow work are billed at a day rate or as a monthly block.</p></details>
+        <details><summary>Which vendors do you not cover?</summary><p>If your environment is built mainly on a platform we do not list, we will say so on the first call and, where we can, point you to someone who does.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="rail"><span class="label">Contact</span><h2>Request a 20-minute call</h2></div>
+      <div class="body" style="gap:1.5rem">
+        <div class="contact">
+          <div class="mailbox">
+            <div class="addr" id="email-text">contact@loopbackengineering.com</div>
+            <div class="cta">
+              <a class="btn solid" href="mailto:contact@loopbackengineering.com?subject=Call%20request&amp;body=Hello%20Loopback%2C%0A%0AWhat%20we%20need%20%28project%2C%20review%20or%20overnight%20changes%29%3A%0A%0AMain%20platforms%20involved%3A%0A%0AAny%20deadline%3A%0A">Email to request a call</a>
+              <button class="btn" type="button" id="copy-btn">Copy address</button>
+            </div>
+            <p id="copy-status" aria-live="polite"></p>
+            <p class="note">Please don't send configurations, IP addresses or diagrams yet. We sign an NDA before any technical material is shared.</p>
+          </div>
+          <div class="brief">
+            <p class="intro">Write a few lines and we will reply with times for a call. It helps to include:</p>
+            <ol>
+              <li>What you need: a project, a review or overnight changes</li>
+              <li>The main platforms involved</li>
+              <li>Any date the work has to be finished by</li>
+            </ol>
+          </div>
+        </div>
+        <div class="next-wrap">
+          <p class="label">What happens next</p>
+          <ol class="next">
+            <li><strong>Call</strong><span>20 minutes on your environment, goals and timing.</span></li>
+            <li><strong>NDA</strong><span>Signed before you share configurations or diagrams.</span></li>
+            <li><strong>Scope &amp; quote</strong><span>A written scope with deliverables, dates and a fixed price or day rate.</span></li>
+            <li><strong>Approved plan</strong><span>Work runs through your change process, with rollback for every change.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap fsite">
+    <div class="fbrand">
+      <p class="fname">Loopback LLC</p>
+      <p>Senior-led network and firewall engineering for US MSPs and enterprise IT teams.</p>
+      <p><a href="mailto:contact@loopbackengineering.com">contact@loopbackengineering.com</a></p>
+    </div>
+    <nav aria-label="Services"><p class="label">Services</p>
+      <a href="#services">Network &amp; data center engineering</a>
+      <a href="#services">Firewall &amp; security infrastructure</a>
+      <a href="#services">Change execution &amp; support</a>
+      <a href="#overnight">US overnight windows</a>
+    </nav>
+    <nav aria-label="Company"><p class="label">Company</p>
+      <a href="#who">Who we help</a>
+      <a href="#about">Leadership</a>
+      <a href="#experience">Selected work</a>
+      <a href="#working">How engagements run</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <nav aria-label="Legal"><p class="label">Legal</p>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="/cookies">Cookie Policy</a>
+    </nav>
+  </div>
+  <div class="wrap fbase"><p>© 2026 Loopback LLC, a Wyoming limited liability company.</p></div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-btn'), status=document.getElementById('copy-status'), el=document.getElementById('email-text');
+  btn.addEventListener('click', function(){
+    function fallback(){
+      var r=document.createRange(); r.selectNodeContents(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent='Address selected. Press Ctrl+C or Cmd+C to copy.';
+    }
+    try{ navigator.clipboard.writeText(el.textContent.trim()).then(function(){status.textContent='Address copied.';}, fallback); }
+    catch(e){ fallback(); }
+  });
+})();
+(function(){
+  var c=document.querySelector('.fibers'); if(!c||!c.getContext) return;
+  var ctx=c.getContext('2d'), W=0, H=0, dpr=1, fibers=[], pulses=[], colors={a:'#ff7d45', b:'#5fd0f0', line:'rgba(127,170,200,.18)'};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var running=false, raf=0, frame=0, inView=true;
+  function readColors(){
+    var cs=getComputedStyle(document.documentElement);
+    colors.a=(cs.getPropertyValue('--accent')||'#ff7d45').trim();
+    colors.b=(cs.getPropertyValue('--cyan')||'#5fd0f0').trim();
+    var dark=getComputedStyle(document.body).colorScheme.indexOf('dark')>-1 || cs.colorScheme.indexOf('dark')>-1;
+    colors.line=dark?'rgba(140,190,220,.13)':'rgba(30,70,110,.13)';
+  }
+  function rand(a,b){return a+Math.random()*(b-a)}
+  function newPulse(scatter){return {f:Math.floor(Math.random()*fibers.length), t:scatter?Math.random():-0.05, v:rand(.0012,.0034), col:Math.random()<.6?'b':'a', len:rand(.06,.12)};}
+  function build(){
+    var r=c.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2);
+    W=r.width; H=r.height; c.width=Math.round(W*dpr); c.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=W<600?9:16; fibers=[];
+    for(var i=0;i<n;i++){
+      var y0=rand(.1,.95)*H, y3=rand(.05,.95)*H;
+      fibers.push({p0:[-40,y0], p1:[W*rand(.2,.45), y0+rand(-.35,.35)*H], p2:[W*rand(.55,.8), y3+rand(-.35,.35)*H], p3:[W+40,y3], w:rand(.6,1.3)});
+    }
+    pulses=[]; for(var j=0;j<(W<600?7:13);j++) pulses.push(newPulse(true));
+    readColors();
+  }
+  function pt(f,t){var u=1-t; return [
+    u*u*u*f.p0[0]+3*u*u*t*f.p1[0]+3*u*t*t*f.p2[0]+t*t*t*f.p3[0],
+    u*u*u*f.p0[1]+3*u*u*t*f.p1[1]+3*u*t*t*f.p2[1]+t*t*t*f.p3[1]];}
+  function draw(){
+    ctx.clearRect(0,0,W,H); ctx.lineCap='round';
+    for(var i=0;i<fibers.length;i++){var f=fibers[i]; ctx.beginPath(); ctx.moveTo(f.p0[0],f.p0[1]); ctx.bezierCurveTo(f.p1[0],f.p1[1],f.p2[0],f.p2[1],f.p3[0],f.p3[1]); ctx.strokeStyle=colors.line; ctx.lineWidth=f.w; ctx.stroke();}
+    for(var k=0;k<pulses.length;k++){
+      var p=pulses[k], f2=fibers[p.f], col=colors[p.col], steps=18;
+      for(var s=0;s<steps;s++){
+        var t1=p.t-p.len*s/steps, t2=p.t-p.len*(s+1)/steps; if(t1<0||t2<0||t1>1) continue;
+        var a=pt(f2,t1), b=pt(f2,t2);
+        ctx.globalAlpha=(1-s/steps)*.9; ctx.strokeStyle=col; ctx.lineWidth=2.2*(1-s/steps)+.4;
+        ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+      }
+      if(p.t>=0&&p.t<=1){var h=pt(f2,p.t); ctx.globalAlpha=1; ctx.shadowColor=col; ctx.shadowBlur=14; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(h[0],h[1],2.2,0,6.283); ctx.fill(); ctx.shadowBlur=0;}
+      ctx.globalAlpha=1;
+    }
+  }
+  function step(){
+    if(!running) return;
+    frame++; if(frame%120===0) readColors();
+    for(var k=0;k<pulses.length;k++){var p=pulses[k]; p.t+=p.v; if(p.t-p.len>1) pulses[k]=newPulse(false);}
+    draw(); raf=requestAnimationFrame(step);
+  }
+  function start(){ if(reduce.matches){ running=false; draw(); return; } if(!running){ running=true; raf=requestAnimationFrame(step);} }
+  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
+  build(); start();
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ build(); if(!running) draw(); },150); });
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ inView=e[0].isIntersecting; inView&&!document.hidden?start():stop(); }).observe(c); }
+  document.addEventListener('visibilitychange', function(){ (document.hidden||!inView)?stop():start(); });
+  if(reduce.addEventListener) reduce.addEventListener('change', function(){ stop(); start(); });
+})();
+(function(){
+  var top=document.querySelector('.top'), btn=top&&top.querySelector('.burger'), nav=document.getElementById('site-nav'); if(!btn||!nav) return;
+  function set(open){ top.classList.toggle('open',open); btn.setAttribute('aria-expanded',open?'true':'false'); btn.setAttribute('aria-label',open?'Close menu':'Open menu'); }
+  btn.addEventListener('click',function(){ set(!top.classList.contains('open')); });
+  nav.addEventListener('click',function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&top.classList.contains('open')){ set(false); btn.focus(); } });
+  document.addEventListener('click',function(e){ if(top.classList.contains('open')&&!top.contains(e.target)) set(false); });
+  window.matchMedia('(min-width:761px)').addEventListener('change',function(m){ if(m.matches) set(false); });
+})();
+</script>
+
+</body>
+</html>
